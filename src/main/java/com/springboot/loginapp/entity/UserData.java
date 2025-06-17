@@ -1,5 +1,7 @@
 package com.springboot.loginapp.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,8 +15,11 @@ public class UserData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
+    @Column
+    @JsonIgnore
     private String password;
-	public Long getId() {
+
+    public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
